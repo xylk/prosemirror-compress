@@ -1,0 +1,22 @@
+{
+  "name": "prosemirror-compress",
+  "version": "0.0.1",
+  "description": "ProseMirror compression",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup src/index.js -f cjs -o dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xylk/prosemirror-compress.git"
+  },
+  "author": "xylk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xylk/prosemirror-compress/issues"
+  },
+  "homepage": "https://github.com/xylk/prosemirror-compress#readme",
+  "devDependencies": {
+    "rollup": "^0.41.4"
+  }
+}
