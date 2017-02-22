@@ -25,6 +25,9 @@ function invertKeysMap(keysMap) {
 
 function mapKeys(keysMap, obj) {
   return (
+    typeof obj === 'string' ?
+      (keysMap[obj] || [ obj ])[0]
+    :
     Array.isArray(obj) ?
       obj.map(mapKeys.bind(0, keysMap))
     :

@@ -4,7 +4,7 @@
 
 ### \[('compress' || 'uncompress') + ('State' || 'Selection' || 'Step') + 'JSON']()
 
-Renames the keys. Maintains JSON structure.
+Renames known keys and values. Maintains JSON structure.
 
 ```js
 let compressedStateJSON = compressStateJSON(/*editorState*/.toJSON())
@@ -20,11 +20,11 @@ let steps = compressedStepsJSON.map(json => Step.fromJSON(/*schema*/, uncompress
 #### uncompressed vs compressed
 
 ```json
-{"selection":{"head":764,"anchor":764}},"doc":{"type":"doc","content":[{"type":"heading","attrs":
+{"selection":{"head":0,"anchor":0}},"doc":{"type":"doc","content":[{"type":"heading","attrs":{"level":3},
 ```
 
 ```json
-{"s":{"h":764,"a":764}},"d":{"t":"doc","c":[{"t":"heading","a":
+{"s":{"h":0,"a":0}},"d":{"t":"d","c":[{"t":"h","a":{"l":3},
 ```
 
 ### compressStepsLossy()

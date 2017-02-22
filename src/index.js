@@ -1,4 +1,4 @@
-import { stateKeysMap, selectionKeysMap, stepKeysMap } from './keysMaps'
+import { stateKeysMap, selectionKeysMap, stepKeysMap } from './maps'
 import { keysMappers } from './functions'
 
 export const [ compressStateJSON, uncompressStateJSON ] = keysMappers(stateKeysMap)
