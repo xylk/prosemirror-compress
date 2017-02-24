@@ -4,7 +4,7 @@
   "description": "ProseMirror compression",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup src/index.js -f cjs -o dist/index.js"
+    "build": "rm -rf dist; mkdir dist; rollup src/index.js -f cjs | buble -o dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/xylk/prosemirror-compress#readme",
   "devDependencies": {
+    "buble": "^0.15.2",
     "rollup": "^0.41.4"
   }
 }

@@ -2,7 +2,7 @@ function invertKeysMap(keysMap) {
   const recursiveInverseKeys = []
   const inverseKeysMap = Object.assign(...Object.entries(keysMap).map(
     function ([ key, [ inverseKey, valueKeysMap ] ]) {
-      return {
+      return ({ // '(' because of https://gitlab.com/Rich-Harris/buble/issues/182
         [inverseKey]: [
           key,
           valueKeysMap && (
@@ -12,7 +12,7 @@ function invertKeysMap(keysMap) {
               invertKeysMap(valueKeysMap)
           ),
         ],
-      }
+      })
     }
   ))
   recursiveInverseKeys.forEach(
@@ -34,14 +34,14 @@ function mapKeys(keysMap, obj) {
       Object.assign({}, ...Object.entries(obj).map(
         function ([ key, value ]) {
           const [ mappedKey = key, valueKeysMap ] = keysMap[key] || []
-          return {
+          return ({ // '(' because of https://gitlab.com/Rich-Harris/buble/issues/182
             [mappedKey]: (
               valueKeysMap && value ?
                 mapKeys(valueKeysMap, value)
               :
                 value
             ),
-          }
+          })
         }
       ))
   )
