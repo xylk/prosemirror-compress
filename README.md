@@ -37,7 +37,7 @@ let steps = compressStepsLossy(/*steps array*/)
 
 ### keysMappers()
 
-For compressing and uncompressing using custom [keys maps](src/keysMaps.js).
+For compressing and uncompressing using custom [keys maps](src/maps.js).
 
 ```js
 let [ keysMapper, inverseKeysMapper ] = keysMappers(/*keysMap*/)
