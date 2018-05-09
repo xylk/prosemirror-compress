@@ -53,8 +53,16 @@ contentKeysMap.content = ['c', contentKeysMap]
 
 const sliceKeysMap = {
   content: ['c', contentKeysMap],
+  openStart: ['oS'],
+  openEnd: ['oE'],
   openLeft: ['oL'],
   openRight: ['oR'],
+}
+
+const selectionTypeValuesMap = {
+  text: ['t'],
+  node: ['n'],
+  all: ['a'],
 }
 
 export const stepKeysMap = {
@@ -70,6 +78,7 @@ export const stepKeysMap = {
 }
 
 export const selectionKeysMap = {
+  type: ['t', selectionTypeValuesMap],
   head: ['h'],
   anchor: ['a'],
   node: ['n'],
