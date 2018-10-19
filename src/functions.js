@@ -31,7 +31,7 @@ function mapKeys(keysMap, obj) {
     Array.isArray(obj) ?
       obj.map(mapKeys.bind(0, keysMap))
     :
-      Object.assign({}, ...Object.entries(obj).map(
+      Object.assign({}, ...Object.entries({...obj}).map(
         function ([ key, value ]) {
           const [ mappedKey = key, valueKeysMap ] = keysMap[key] || []
           return ({ // '(' because of https://gitlab.com/Rich-Harris/buble/issues/182
